@@ -1,4 +1,4 @@
-package com.eventostec.api.repositories;
+package com.eventostec.api.adapters.outputs.repositories;
 
 import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.domain.event.EventAddressProjection;

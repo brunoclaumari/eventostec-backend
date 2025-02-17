@@ -1,4 +1,4 @@
-package com.eventostec.api.exceptions.config;
+package com.eventostec.api.infrastructure.config.exceptions;
 
 import com.eventostec.api.utils.ExceptionUtil;
 import jakarta.servlet.http.HttpServletRequest;

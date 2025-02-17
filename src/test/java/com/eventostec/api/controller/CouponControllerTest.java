@@ -1,8 +1,9 @@
 package com.eventostec.api.controller;
 
+import com.eventostec.api.adapters.inputs.controller.CouponController;
 import com.eventostec.api.domain.coupon.Coupon;
 import com.eventostec.api.domain.coupon.CouponRequestDTO;
-import com.eventostec.api.service.CouponService;
+import com.eventostec.api.application.service.CouponService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

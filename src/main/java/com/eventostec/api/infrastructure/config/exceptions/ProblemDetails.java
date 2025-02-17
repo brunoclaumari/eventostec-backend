@@ -1,4 +1,4 @@
-package com.eventostec.api.exceptions.config;
+package com.eventostec.api.infrastructure.config.exceptions;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

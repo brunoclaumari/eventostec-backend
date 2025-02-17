@@ -1,9 +1,9 @@
-package com.eventostec.api.service;
+package com.eventostec.api.application.service;
 
 import com.eventostec.api.domain.address.Address;
 import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.domain.event.EventRequestDTO;
-import com.eventostec.api.repositories.AddressRepository;
+import com.eventostec.api.adapters.outputs.repositories.AddressRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

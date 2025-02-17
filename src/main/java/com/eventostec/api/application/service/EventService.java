@@ -1,10 +1,10 @@
-package com.eventostec.api.service;
+package com.eventostec.api.application.service;
 
 import com.eventostec.api.domain.address.Address;
 import com.eventostec.api.domain.coupon.Coupon;
 import com.eventostec.api.domain.event.*;
-import com.eventostec.api.mappers.EventMapper;
-import com.eventostec.api.repositories.EventRepository;
+import com.eventostec.api.utils.mappers.EventMapper;
+import com.eventostec.api.adapters.outputs.repositories.EventRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;

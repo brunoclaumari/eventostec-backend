@@ -1,4 +1,4 @@
-package com.eventostec.api.mappers;
+package com.eventostec.api.utils.mappers;
 
 import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.domain.event.EventRequestDTO;

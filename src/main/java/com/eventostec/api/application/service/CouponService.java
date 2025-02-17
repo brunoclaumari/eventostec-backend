@@ -1,10 +1,10 @@
-package com.eventostec.api.service;
+package com.eventostec.api.application.service;
 
 import com.eventostec.api.domain.coupon.Coupon;
 import com.eventostec.api.domain.coupon.CouponRequestDTO;
 import com.eventostec.api.domain.event.Event;
-import com.eventostec.api.repositories.CouponRepository;
-import com.eventostec.api.repositories.EventRepository;
+import com.eventostec.api.adapters.outputs.repositories.CouponRepository;
+import com.eventostec.api.adapters.outputs.repositories.EventRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

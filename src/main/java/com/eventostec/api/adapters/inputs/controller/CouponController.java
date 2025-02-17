@@ -1,8 +1,8 @@
-package com.eventostec.api.controller;
+package com.eventostec.api.adapters.inputs.controller;
 
 import com.eventostec.api.domain.coupon.Coupon;
 import com.eventostec.api.domain.coupon.CouponRequestDTO;
-import com.eventostec.api.service.CouponService;
+import com.eventostec.api.application.service.CouponService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

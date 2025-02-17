@@ -1,4 +1,4 @@
-package com.eventostec.api.config;
+package com.eventostec.api.infrastructure.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

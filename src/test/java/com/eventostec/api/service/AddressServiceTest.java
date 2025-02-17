@@ -1,9 +1,10 @@
 package com.eventostec.api.service;
 
+import com.eventostec.api.application.service.AddressService;
 import com.eventostec.api.domain.address.Address;
 import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.domain.event.EventRequestDTO;
-import com.eventostec.api.repositories.AddressRepository;
+import com.eventostec.api.adapters.outputs.repositories.AddressRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
