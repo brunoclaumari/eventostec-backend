@@ -5,7 +5,7 @@ import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.domain.event.EventDetailsDTO;
 import com.eventostec.api.domain.event.EventRequestDTO;
 import com.eventostec.api.domain.event.EventResponseDTO;
-import com.eventostec.api.application.service.EventService;
+import com.eventostec.api.application.service.EventServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +32,7 @@ class EventControllerTest {
     private MockMvc mockMvc;
 
     @MockBean
-    private EventService eventService;
+    private EventServiceImpl eventService;
 
     @Autowired
     private ObjectMapper objectMapper;

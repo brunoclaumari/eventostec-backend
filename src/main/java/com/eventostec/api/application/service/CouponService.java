@@ -4,7 +4,7 @@ import com.eventostec.api.domain.coupon.Coupon;
 import com.eventostec.api.domain.coupon.CouponRequestDTO;
 import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.adapters.outputs.repositories.CouponRepository;
-import com.eventostec.api.adapters.outputs.repositories.EventRepository;
+import com.eventostec.api.adapters.outputs.repositories.JpaEventRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,7 +17,7 @@ import java.util.UUID;
 public class CouponService {
 
     private final CouponRepository couponRepository;
-    private final EventRepository eventRepository;
+    private final JpaEventRepository eventRepository;
 
     public Coupon addCouponToEvent(UUID eventId, CouponRequestDTO couponData) {
         Event event = eventRepository.findById(eventId)

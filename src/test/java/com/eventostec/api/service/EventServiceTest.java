@@ -1,10 +1,12 @@
 package com.eventostec.api.service;
 
+import com.eventostec.api.adapters.outputs.repositories.impl.EventRepositoryImpl;
+import com.eventostec.api.adapters.outputs.storage.ImageUploaderAdapter;
 import com.eventostec.api.application.service.AddressService;
 import com.eventostec.api.application.service.CouponService;
-import com.eventostec.api.application.service.EventService;
+import com.eventostec.api.application.service.EventServiceImpl;
 import com.eventostec.api.domain.event.*;
-import com.eventostec.api.adapters.outputs.repositories.EventRepository;
+import com.eventostec.api.adapters.outputs.repositories.JpaEventRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -40,11 +42,17 @@ class EventServiceTest {
     @Mock
     private CouponService couponService;
 
+//    @Mock
+//    private JpaEventRepository repository;
+
     @Mock
-    private EventRepository repository;
+    private EventRepositoryImpl repository;
+
+    @Mock
+    private ImageUploaderAdapter imageUploader;
 
     @InjectMocks
-    private EventService eventService;
+    private EventServiceImpl eventService;
 
     private final String adminKey = "test-admin-key";
     private final String bucketName = "test-bucket";
@@ -52,7 +60,7 @@ class EventServiceTest {
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
-        eventService = new EventService(s3Client, addressService, couponService, repository);
+        eventService = new EventServiceImpl(addressService, couponService, repository, imageUploader);
         // Configurando valores diretamente nos atributos usando ReflectionTestUtils
         ReflectionTestUtils.setField(eventService, "adminKey", adminKey);
         ReflectionTestUtils.setField(eventService, "bucketName", bucketName);
@@ -79,7 +87,8 @@ class EventServiceTest {
         List<EventAddressProjection> events = List.of(mock(EventAddressProjection.class));
         Page<EventAddressProjection> eventsPage = new PageImpl<>(events);
 
-        when(repository.findUpcomingEvents(any(Date.class), eq(pageable))).thenReturn(eventsPage);
+        //when(repository.findUpcomingEvents(any(Date.class), eq(pageable))).thenReturn(eventsPage);
+        when(repository.findUpcomingEvents(pageable.getPageNumber(), eventsPage.getSize())).thenReturn(eventsPage);
 
         List<EventResponseDTO> result = eventService.getUpcomingEvents(0, 10);
 
@@ -119,7 +128,7 @@ class EventServiceTest {
         // Use a mesma chave de administrador configurada
         eventService.deleteEvent(eventId, adminKey);
 
-        verify(repository, times(1)).delete(event);
+        verify(repository, times(1)).deleteById(eventId);
     }
 
     @Test

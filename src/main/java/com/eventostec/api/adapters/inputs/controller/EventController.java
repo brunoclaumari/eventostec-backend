@@ -4,7 +4,7 @@ import com.eventostec.api.domain.event.Event;
 import com.eventostec.api.domain.event.EventDetailsDTO;
 import com.eventostec.api.domain.event.EventRequestDTO;
 import com.eventostec.api.domain.event.EventResponseDTO;
-import com.eventostec.api.application.service.EventService;
+import com.eventostec.api.application.service.EventServiceImpl;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -20,7 +20,7 @@ import java.util.UUID;
 @RequestMapping("/api/event")
 public class EventController {
 
-    private final EventService eventService;
+    private final EventServiceImpl eventService;
 
     @PostMapping(consumes = "multipart/form-data")
     public ResponseEntity<Event> create(@Valid @ModelAttribute EventRequestDTO eventRequestDTO) {
